@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(routes);
 
 app.get("/private", authenticate, (req, res) => {
-  console.log("I am the user", req.user);
   return res.status(200).json({ message: "I am a private route" });
 });
 
@@ -26,6 +25,7 @@ app.use((error, req, res, next) => {
 connectDB("mongodb://localhost:27017/attendance-db")
   .then(() => {
     app.listen(4000, () => {
+      console.log("Database connected");
       console.log("App listening on port 4000");
     });
   })

@@ -2,11 +2,10 @@ const User = require("../models/User");
 const userService = require("../service/user");
 const authService = require("../service/auth");
 const error = require("../utils/error");
-const { response } = require("express");
 
 const getUsers = async (req, res, next) => {
   /**
-   * TODO: filter, sort, pagination
+   * TODO: filter, sort, pagination, select
    */
 
   try {
